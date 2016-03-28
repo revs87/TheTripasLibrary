@@ -1,0 +1,148 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="margin_half">7dp</dimen>
+    <dimen name="margin_half_less">5dp</dimen>
+    <dimen name="margin_10">10dp</dimen>
+    <dimen name="margin">15dp</dimen>
+    <dimen name="margin_less">5dp</dimen>
+    <dimen name="margin_less_2">7dp</dimen>
+    <dimen name="margin_plus_half">22dp</dimen>
+    <dimen name="margin_double">30dp</dimen>
+    <dimen name="margin_22">22dp</dimen>
+
+    <!-- Generic values -->
+    <dimen name="generic_toolbar_height">55dp</dimen>
+    <dimen name="generic_button_height">45dp</dimen>
+    <dimen name="generic_button_side_padding">50dp</dimen>
+    <dimen name="generic_button_text_size">14sp</dimen>
+    <dimen name="generic_thumbnail_size">40dp</dimen>
+    <dimen name="generic_thumbnail_size_big">50dp</dimen>
+    <dimen name="generic_thumbnail_size_small">30dp</dimen>
+    <dimen name="generic_divider_height">1dp</dimen>
+    <dimen name="generic_divider_height_light">1px</dimen>
+
+    <dimen name="general_margin_minus_10">-10dp</dimen>
+    <dimen name="general_margin_minus_8">-8dp</dimen>
+    <dimen name="general_margin_1">1dp</dimen>
+    <dimen name="general_margin_5">5dp</dimen>
+    <dimen name="general_margin_3">3dp</dimen>
+    <dimen name="general_margin_8">8dp</dimen>
+    <dimen name="general_margin_10">10dp</dimen>
+    <dimen name="general_margin_15">15dp</dimen>
+    <dimen name="general_margin_20">20dp</dimen>
+    <dimen name="general_margin_30">30dp</dimen>
+    <dimen name="general_margin_40">40dp</dimen>
+    <dimen name="general_margin_50">50dp</dimen>
+    <dimen name="general_margin_60">60dp</dimen>
+    <dimen name="general_margin_70">70dp</dimen>
+    <dimen name="general_margin_80">80dp</dimen>
+    <dimen name="general_margin_90">90dp</dimen>
+    <dimen name="general_margin_100">100dp</dimen>
+
+    <dimen name="general_text_10">10sp</dimen>
+    <dimen name="general_text_12">12sp</dimen>
+    <dimen name="general_text_14">14sp</dimen>
+    <dimen name="general_text_16">16sp</dimen>
+    <dimen name="general_text_18">18sp</dimen>
+    <dimen name="general_text_20">20sp</dimen>
+    <dimen name="general_text_22">22sp</dimen>
+    <dimen name="general_text_24">24sp</dimen>
+    <dimen name="general_text_26">26sp</dimen>
+
+    <dimen name="general_height_1">1dp</dimen>
+    <dimen name="general_height_10">10dp</dimen>
+    <dimen name="general_height_20">20dp</dimen>
+    <dimen name="general_height_30">30dp</dimen>
+    <dimen name="general_height_40">40dp</dimen>
+    <dimen name="general_height_41">41dp</dimen>
+    <dimen name="general_height_50">50dp</dimen>
+    <dimen name="general_height_55">55dp</dimen>
+    <dimen name="general_height_58">58dp</dimen>
+    <dimen name="general_height_60">60dp</dimen>
+    <dimen name="general_height_70">70dp</dimen>
+    <dimen name="general_height_80">80dp</dimen>
+    <dimen name="general_height_130">130dp</dimen>
+    <dimen name="general_height_135">135dp</dimen>
+    <dimen name="general_height_140">140dp</dimen>
+
+    <dimen name="general_height_22">22dp</dimen>
+
+    <!-- Edittexts dimensions -->
+    <dimen name="generic_edittext_height">48dp</dimen>
+    <dimen name="generic_edittext_background_padding">10dp</dimen>
+    <dimen name="generic_edittext_background_stroke_radius">2dp</dimen>
+    <dimen name="generic_edittext_background_stroke_width">1dp</dimen>
+    <dimen name="generic_text_size">12sp</dimen>
+    <dimen name="generic_text_size_medium">14sp</dimen>
+    <dimen name="generic_text_size_big">16sp</dimen>
+
+    <!-- Action bar -->
+    <dimen name="action_bar_height">57dp</dimen>
+    <dimen name="action_bar_title_size">25sp</dimen>
+
+    <!--Spinner Height-->
+    <dimen name="generic_spinner_height">53dp</dimen>
+
+    <!-- Sliding Menu -->
+    <dimen name="sliding_side_padding">27dp</dimen>
+    <dimen name="sliding_public_height">50dp</dimen>
+
+    <!-- Float EditText -->
+    <dimen name="generic_edittext_float_height">40dp</dimen>
+    <dimen name="generic_edittext_float_text_hint">12sp</dimen>
+    <dimen name="generic_edittext_float_text_label">14sp</dimen>
+    <dimen name="generic_floatlabel_padding_horizontal">20dp</dimen>
+
+
+    <!-- Separated Textfield -->
+    <dimen name="separated_textfield_width">280dp</dimen>
+    <dimen name="separated_textfield_height">100dp</dimen>
+    <dimen name="separated_textfield_A">20dp</dimen>
+    <dimen name="separated_textfield_B">30dp</dimen>
+    <dimen name="separated_textfield_square_width">22dp</dimen>
+    <dimen name="separated_textfield_square_height">37dp</dimen>
+    <dimen name="separated_textfield_square_height_2">40dp</dimen>
+    <dimen name="separated_textfield_4_square_width">45dp</dimen>
+    <dimen name="separated_textfield_4_square_height">52dp</dimen>
+    <dimen name="separated_textfield_5_square_width">50dp</dimen>
+    <dimen name="separated_textfield_5_square_height">55dp</dimen>
+    <dimen name="separated_textfield_6_square_width">45dp</dimen>
+    <dimen name="separated_textfield_6_square_height">50dp</dimen>
+    <dimen name="separated_textfield_7_square_width">40dp</dimen>
+    <dimen name="separated_textfield_7_square_height">45dp</dimen>
+    <dimen name="separated_textfield_8_square_width">35dp</dimen>
+    <dimen name="separated_textfield_8_square_height">40dp</dimen>
+    <dimen name="separated_textfield_4_padding">@dimen/margin_half</dimen>
+    <dimen name="separated_textfield_5_padding">15dp</dimen>
+    <dimen name="separated_textfield_6_padding">11dp</dimen>
+    <dimen name="separated_textfield_7_padding">9dp</dimen>
+    <dimen name="separated_textfield_8_padding">7dp</dimen>
+    <dimen name="separated_textfield_min_padding">5dp</dimen>
+    <dimen name="separated_textfield_4_text_size">16sp</dimen>
+    <dimen name="separated_textfield_5_text_size">14sp</dimen>
+    <dimen name="separated_textfield_6_text_size">12sp</dimen>
+    <dimen name="separated_textfield_7_text_size">11sp</dimen>
+    <dimen name="separated_textfield_8_text_size">10sp</dimen>
+    <dimen name="separated_textfield_min_text_size">9sp</dimen>
+    <dimen name="separated_textfield_pin_box_image_margins">7dp</dimen>
+
+    <!-- Custom Keyboard -->
+    <dimen name="keyboard_text_size">24sp</dimen>
+    <dimen name="keyboard_view_height">54dp</dimen>
+    <dimen name="keyboard_view_thickness">1dp</dimen>
+
+    <!-- CustomSwitchButton -->
+    <dimen name="settings_toggle_circle_diameter">30dp</dimen>
+    <dimen name="settings_toggle_circle_diameter_2">24dp</dimen>
+    <dimen name="settings_toggle_circle_radius">6dp</dimen>
+    <dimen name="settings_toggle_width">54dp</dimen>
+    <dimen name="settings_toggle_width_animation">51dp</dimen>
+    <dimen name="settings_toggle_margin">3dp</dimen>
+    <!-- {x2 = 6} -->
+    <dimen name="settings_toggle_margin_plus">1dp</dimen>
+
+</resources>

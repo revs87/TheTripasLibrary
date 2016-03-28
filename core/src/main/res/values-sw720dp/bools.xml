@@ -1,0 +1,5 @@
+<resources>
+    <bool name="isPhone">false</bool>
+    <bool name="isSw600">false</bool>
+    <bool name="isSw720">true</bool>
+</resources>

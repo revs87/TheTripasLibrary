@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <FrameLayout
+        android:id="@+id/switch_custom_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <View
+            android:id="@+id/switch_custom_background_oval_off"
+            android:layout_width="@dimen/settings_toggle_width"
+            android:layout_height="@dimen/settings_toggle_circle_diameter"
+            android:background="@drawable/shape_custom_switch_background_off" />
+
+        <View
+            android:id="@+id/switch_custom_background_oval_on"
+            android:layout_width="@dimen/settings_toggle_width"
+            android:layout_height="@dimen/settings_toggle_circle_diameter"
+            android:background="@drawable/shape_custom_switch_background_on"
+            android:visibility="gone" />
+
+        <View
+            android:id="@+id/switch_custom_toggle_circle"
+            android:layout_width="@dimen/settings_toggle_circle_diameter_2"
+            android:layout_height="@dimen/settings_toggle_circle_diameter_2"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/settings_toggle_margin"
+            android:layout_marginBottom="@dimen/settings_toggle_margin"
+            android:layout_marginRight="@dimen/settings_toggle_margin"
+            android:layout_marginTop="@dimen/settings_toggle_margin"
+            android:background="@drawable/shape_custom_switch_button" />
+
+    </FrameLayout>
+</merge>

@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">TheTripasLibrary</string>
+
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+
+    <!-- Error -->
+    <string name="error_generic_title">Error</string>
+    <string name="error_generic_message">Operation not possible</string>
+    <string name="error_generic_try_again">Try again?</string>
+    <string name="error_retry">Retry</string>
+
 </resources>

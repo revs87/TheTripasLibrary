@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/generic_toolbar_height"
+    android:background="@color/colorPrimary"
+    android:gravity="center_vertical"
+    app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+    app:theme="@style/AppBarTheme">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/generic_toolbar_height"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <!-- Titles -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/generic_toolbar_height"
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <com.ebankit.android.core.Controller.AutoResizeTextView
+                android:id="@+id/toolbar_subtitle_tv"
+                fontPath="fonts/Roboto-Light.ttf"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="-3dp"
+                android:gravity="center_vertical"
+                android:maxLines="1"
+                android:textColor="@color/text_white"
+                android:textSize="12sp"
+                android:visibility="gone" />
+
+            <com.ebankit.android.core.Controller.AutoResizeTextView
+                android:id="@+id/toolbar_title_tv"
+                fontPath="fonts/Roboto-Light.ttf"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:maxLines="1"
+                android:text=""
+                android:textColor="@color/text_white"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</android.support.v7.widget.Toolbar>
