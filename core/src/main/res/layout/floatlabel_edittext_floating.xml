@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:animateLayoutChanges="true">
+
+    <View
+        android:id="@+id/dummy_v"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:focusable="true"
+        android:focusableInTouchMode="true" />
+
+    <LinearLayout
+        android:id="@+id/floating_label_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edittext_background_shape"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <RelativeLayout
+            android:id="@+id/floating_labels_rl"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/generic_edittext_float_height"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/floating_label_hint"
+                fontPath="fonts/OpenSans-Regular.ttf"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="-2dp"
+                android:text="lala"
+                android:textAllCaps="true"
+                android:textColor="@color/text"
+                android:textSize="11sp"
+                android:visibility="visible" />
+
+            <EditText
+                android:id="@+id/floating_label_edit_text"
+                fontPath="fonts/OpenSans-Regular.ttf"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/floating_label_hint"
+                android:background="@null"
+                android:hint="tmp"
+                android:singleLine="true"
+                android:textColor="@color/text"
+                android:textSize="@dimen/generic_edittext_float_text_label" />
+
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/floating_label_show_password"
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical|right"
+            android:scaleType="center"
+            android:src="@drawable/ic_chevron_left_black_24dp" />
+
+        <ImageView
+            android:id="@+id/floating_label_tooltip"
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical|right"
+            android:scaleType="center"
+            android:src="@drawable/ic_apps_black_24dp" />
+
+        <ImageView
+            android:id="@+id/floating_label_clear"
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical|right"
+            android:scaleType="center"
+            android:src="@drawable/ic_close_black_24dp"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/floating_label_error"
+        fontPath="fonts/OpenSans-Regular.ttf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/floating_label_ll"
+        android:layout_alignRight="@+id/floating_label_ll"
+        android:layout_below="@+id/floating_label_ll"
+        android:paddingLeft="10dp"
+        android:textColor="@color/red"
+        android:textSize="11sp"
+        android:visibility="gone" />
+
+</RelativeLayout>

@@ -39,5 +39,12 @@
         <item name="android:backgroundDimEnabled">true</item>
     </style>
 
+    <style name="HelpStylePopup" parent="android:Widget.TextView">
+        <item name="android:gravity">left</item>
+        <item name="android:minHeight">50dp</item>
+        <item name="android:minWidth">75dp</item>
+        <item name="android:maxWidth">400dp</item>
+        <item name="android:padding">6dp</item>
+    </style>
 
 </resources>

@@ -4,4 +4,46 @@
         <attr name="isChecked" format="boolean" />
     </declare-styleable>
 
+    <declare-styleable name="FloatLabelEditText">
+        <attr name="fitScreenWidth" format="enum">
+            <enum name="full" value="1" />
+            <enum name="half" value="2" />
+        </attr>
+        <attr name="gravity" format="enum">
+            <enum name="left" value="3" />
+            <enum name="right" value="5" />
+            <enum name="center" value="17" />
+        </attr>
+        <attr name="hint" format="string" />
+        <attr name="inputType" format="enum">
+            <enum name="normal" value="0" />
+            <enum name="textPassword" value="1" />
+            <enum name="number" value="2" />
+            <enum name="numberPassword" value="3" />
+            <enum name="amount" value="4" />
+            <enum name="groupby4" value="5" />
+            <enum name="description" value="7" />
+            <enum name="blocked" value="8" />
+            <enum name="groupby4numbers" value="9" />
+            <enum name="groupby4iban" value="10" />
+            <enum name="phonenumber" value="11" />
+        </attr>
+        <attr name="text" format="string" />
+        <attr name="textSize" format="dimension" />
+        <attr name="textColorHintFocused" format="color" />
+        <attr name="textColorHintUnFocused" format="color" />
+        <attr name="limit" format="integer"/>
+        <attr name="hasClear" format="boolean" />
+        <attr name="hasShowPassword" format="boolean" />
+        <attr name="tooltip" format="string" />
+        <attr name="layoutType" format="enum">
+            <enum name="normal" value="0" />
+            <enum name="floating" value="1" />
+            <enum name="horizontal" value="2" />
+            <enum name="vertical" value="3" />
+            <enum name="horizontal_description" value="4" />
+            <enum name="floating_description" value="5" />
+        </attr>
+    </declare-styleable>
+
 </resources>

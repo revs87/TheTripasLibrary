@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:animateLayoutChanges="true"
+    android:orientation="horizontal"
+    android:weightSum="4">
+
+    <View
+        android:id="@+id/dummy_v"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:focusable="true"
+        android:focusableInTouchMode="true" />
+
+    <TextView
+        android:id="@+id/floating_label_hint"
+        fontPath="fonts/OpenSans-Regular.ttf"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1.3"
+        android:gravity="center_vertical|right"
+        android:text="label"
+        android:textColor="@color/colorPrimary" />
+
+    <LinearLayout
+        android:id="@+id/ll"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="2.7"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/generic_floatlabel_padding_horizontal">
+
+        <LinearLayout
+            android:id="@+id/floating_label_ll"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:layout_marginLeft="@dimen/margin_half"
+            android:background="@drawable/edittext_background_shape"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <EditText
+                android:id="@+id/floating_label_edit_text"
+                fontPath="fonts/OpenSans-Regular.ttf"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@null"
+                android:singleLine="true"
+                android:textColor="@color/text"
+                android:textSize="@dimen/generic_text_size" />
+
+            <ImageView
+                android:id="@+id/floating_label_show_password"
+                android:layout_width="30dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical|right"
+                android:scaleType="center"
+                android:src="@drawable/ic_chevron_left_black_24dp" />
+
+            <ImageView
+                android:id="@+id/floating_label_tooltip"
+                android:layout_width="30dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical|right"
+                android:scaleType="center"
+                android:src="@drawable/ic_apps_black_24dp" />
+
+            <ImageView
+                android:id="@+id/floating_label_clear"
+                android:layout_width="30dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical|right"
+                android:scaleType="center"
+                android:src="@drawable/ic_close_black_24dp"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/floating_label_error"
+            fontPath="fonts/OpenSans-Regular.ttf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin"
+            android:background="@color/transparent"
+            android:textColor="@color/red"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+</LinearLayout>

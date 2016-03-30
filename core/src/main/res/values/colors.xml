@@ -24,4 +24,5 @@
     <color name="text_dark">#333333</color>
     <color name="text_light">#979797</color>
     <color name="text">#636363</color>
+    <color name="background_base_color">@color/light_grey</color>
 </resources>
