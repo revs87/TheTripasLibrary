@@ -11,6 +11,7 @@ import android.support.v4.app.FragmentTransaction;
 import com.octo.android.robospice.SpiceManager;
 import com.tripasfactory.thetripaslibrary.RoboSpice.CacheableSpringAndroidSpiceService;
 
+
 public class BaseDialogFragment extends DialogFragment {
 
     private static final String TAG = BaseDialogFragment.class.getSimpleName();
@@ -62,7 +63,9 @@ public class BaseDialogFragment extends DialogFragment {
                 .getSimpleName())) {
 
             shown = true;
-            super.show(manager, tag);
+            if (manager != null) {
+                super.show(manager, tag);
+            }
 
             return;
         }
@@ -93,7 +96,9 @@ public class BaseDialogFragment extends DialogFragment {
                 .getSimpleName())) {
 
             shown = false;
-            super.dismiss();
+            if (getFragmentManager() != null) {
+                super.dismiss();
+            }
 
             return;
         }
@@ -109,7 +114,6 @@ public class BaseDialogFragment extends DialogFragment {
 
             shown = false;
         }
-
     }
 
     @Override
@@ -119,7 +123,9 @@ public class BaseDialogFragment extends DialogFragment {
                 .getSimpleName())) {
 
             shown = false;
-            super.dismiss();
+            if (getFragmentManager() != null) {
+                super.dismiss();
+            }
 
             return;
         }

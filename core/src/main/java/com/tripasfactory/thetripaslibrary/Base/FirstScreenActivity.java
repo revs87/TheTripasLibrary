@@ -67,6 +67,7 @@ public class FirstScreenActivity extends FragmentActivity {
                 @Override
                 public void onClick(View v) {
                     if (Configs.SHOULD_BLOCK_CONNECTIVITY_STATUS) {
+                        dialog.dismiss();
                         finish();
                     } else {
                         dialog.dismiss();
@@ -105,6 +106,7 @@ public class FirstScreenActivity extends FragmentActivity {
                         @Override
                         public void onClick(View v) {
                             if (Configs.SHOULD_BLOCK_CONNECTION_ON_SSL_PINNING_FAIL) {
+                                dialog.dismiss();
                                 finish();
                             } else {
                                 isPinnedEvaluated = true;
@@ -137,6 +139,7 @@ public class FirstScreenActivity extends FragmentActivity {
                         @Override
                         public void onClick(View v) {
                             if (Configs.SHOULD_BLOCK_CONNECTION_ON_SSL_PINNING_FAIL) {
+                                dialog.dismiss();
                                 finish();
                             } else {
                                 isPinnedEvaluated = true;
@@ -175,6 +178,7 @@ public class FirstScreenActivity extends FragmentActivity {
                 @Override
                 public void onClick(View v) {
                     if (Configs.SHOULD_BLOCK_ROOTED) {
+                        dialog.dismiss();
                         finish();
                     } else {
                         isRootedEvaluated = true;
@@ -203,7 +207,7 @@ public class FirstScreenActivity extends FragmentActivity {
                     } else {
                         /* Allow only phone */
                         if (ApplicationClass.getDevice() != ApplicationClass.DEVICE_PHONE) {
-                            CustomDialogFragment dialog = CustomDialogFragment
+                            final CustomDialogFragment dialog = CustomDialogFragment
                                     .newInstance(
                                             getResources().getString(
                                                     R.string.error_generic_title),
@@ -213,7 +217,8 @@ public class FirstScreenActivity extends FragmentActivity {
                             dialog.setConfirmButtonListener(new View.OnClickListener() {
                                 @Override
                                 public void onClick(View v) {
-                                    FirstScreenActivity.this.finish();
+                                    dialog.dismiss();
+                                    finish();
                                 }
 
                             });
