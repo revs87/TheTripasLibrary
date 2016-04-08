@@ -1,9 +1,13 @@
 package com.tripasfactory.thetripaslibrary.Utils;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.provider.Settings;
 
 import com.tripasfactory.thetripaslibrary.Base.BaseActivity;
+import com.tripasfactory.thetripaslibrary.Manager.Contextor;
 
 import java.lang.reflect.Method;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -13,15 +17,41 @@ import java.util.concurrent.atomic.AtomicInteger;
  */
 public class Utils {
 
+    private static Utils instance;
+    private Context mContext;
+
+    public static Utils getInstance() {
+        if (instance == null)
+            instance = new Utils();
+        return instance;
+    }
+
+    private Utils() {
+        mContext = Contextor.getInstance().getContext();
+    }
+
+    public String getDeviceId() {
+        return Settings.Secure.getString(mContext.getContentResolver(), Settings.Secure.ANDROID_ID);
+    }
+
+    public String getVersionName() {
+        try {
+            PackageInfo pInfo = mContext.getPackageManager().getPackageInfo(mContext.getPackageName(), 0);
+            return pInfo.versionName;
+        } catch (Exception e) {
+            return "1.0";
+        }
+    }
+
     /**
      * Generate a value suitable for use in {@link #setId(int)}.
      * This value will not collide with ID values generated at build time by aapt for R.id.
      *
      * @return a generated ID value
      */
-    private static final AtomicInteger sNextGeneratedId = new AtomicInteger(1);
+    private final AtomicInteger sNextGeneratedId = new AtomicInteger(1);
 
-    public static int generateViewId() {
+    public int generateViewId() {
         for (; ; ) {
             final int result = sNextGeneratedId.get();
             // aapt-generated IDs have the high byte nonzero; clamp to the range under that.
@@ -36,7 +66,7 @@ public class Utils {
     /*
     * Prompts Messaging dialog
     * */
-    public static void sendSMS(Activity activity, String smsContent) {
+    public void sendSMS(Activity activity, String smsContent) {
         BaseActivity.pushedBackButtonBackToolbar = true;
 
         Intent sendIntent = new Intent(Intent.ACTION_VIEW);
@@ -49,7 +79,7 @@ public class Utils {
     /*
     * Prompts Email dialog
     * */
-    public static void sendEmail(Activity activity, String emailSubject, String emailContent) {
+    public void sendEmail(Activity activity, String emailSubject, String emailContent) {
         BaseActivity.pushedBackButtonBackToolbar = true;
 
         Intent mEmail = new Intent(Intent.ACTION_SEND);
@@ -65,7 +95,7 @@ public class Utils {
     /**
      * Useful for XML objects merge during incremental workflow
      */
-    public static void merge(Object obj, Object update) {
+    public void merge(Object obj, Object update) {
         if (!obj.getClass().isAssignableFrom(update.getClass())) {
             return;
         }
