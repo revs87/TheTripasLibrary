@@ -7,7 +7,6 @@ import android.content.pm.PackageInfo;
 import android.provider.Settings;
 
 import com.tripasfactory.thetripaslibrary.Base.BaseActivity;
-import com.tripasfactory.thetripaslibrary.Manager.Contextor;
 
 import java.lang.reflect.Method;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -17,24 +16,13 @@ import java.util.concurrent.atomic.AtomicInteger;
  */
 public class Utils {
 
-    private static Utils instance;
-    private Context mContext;
+    private Utils() { /* cannot be instantiated */ }
 
-    public static Utils getInstance() {
-        if (instance == null)
-            instance = new Utils();
-        return instance;
-    }
-
-    public Utils() {
-        mContext = Contextor.getInstance().getContext();
-    }
-
-    public String getDeviceId() {
+    public static String getDeviceId(Context mContext) {
         return Settings.Secure.getString(mContext.getContentResolver(), Settings.Secure.ANDROID_ID);
     }
 
-    public String getVersionName() {
+    public static String getVersionName(Context mContext) {
         try {
             PackageInfo pInfo = mContext.getPackageManager().getPackageInfo(mContext.getPackageName(), 0);
             return pInfo.versionName;
