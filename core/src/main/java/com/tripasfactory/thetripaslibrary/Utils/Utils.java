@@ -49,9 +49,9 @@ public class Utils {
      *
      * @return a generated ID value
      */
-    private final AtomicInteger sNextGeneratedId = new AtomicInteger(1);
+    private static final AtomicInteger sNextGeneratedId = new AtomicInteger(1);
 
-    public int generateViewId() {
+    public static int generateViewId() {
         for (; ; ) {
             final int result = sNextGeneratedId.get();
             // aapt-generated IDs have the high byte nonzero; clamp to the range under that.
@@ -66,7 +66,7 @@ public class Utils {
     /*
     * Prompts Messaging dialog
     * */
-    public void sendSMS(Activity activity, String smsContent) {
+    public static void sendSMS(Activity activity, String smsContent) {
         BaseActivity.pushedBackButtonBackToolbar = true;
 
         Intent sendIntent = new Intent(Intent.ACTION_VIEW);
@@ -79,7 +79,7 @@ public class Utils {
     /*
     * Prompts Email dialog
     * */
-    public void sendEmail(Activity activity, String emailSubject, String emailContent) {
+    public static void sendEmail(Activity activity, String emailSubject, String emailContent) {
         BaseActivity.pushedBackButtonBackToolbar = true;
 
         Intent mEmail = new Intent(Intent.ACTION_SEND);
@@ -95,7 +95,7 @@ public class Utils {
     /**
      * Useful for XML objects merge during incremental workflow
      */
-    public void merge(Object obj, Object update) {
+    public static void merge(Object obj, Object update) {
         if (!obj.getClass().isAssignableFrom(update.getClass())) {
             return;
         }
