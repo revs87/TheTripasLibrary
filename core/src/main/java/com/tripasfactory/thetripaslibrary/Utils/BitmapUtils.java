@@ -1,4 +1,4 @@
-package com.tripasfactory.thetripaslibrary.Utils;
+package com.ebankit.android.core.Utils;
 
 import android.content.res.Resources;
 import android.graphics.Bitmap;
@@ -74,6 +74,30 @@ public class BitmapUtils {
         return BitmapFactory.decodeResource(res, resId, options);
     }
 
+    /**
+     * bitmaps.set(
+     * position,
+     * BitmapUtils.decodeSampledBitmapFromByteArray(
+     * imageBytes,
+     * context.getResources().getDimensionPixelSize(R.dimen.width),
+     * context.getResources().getDimensionPixelSize(R.dimen.height)));
+     */
+    public static Bitmap decodeSampledBitmapFromByteArray(byte[] byteArray,
+                                                          int reqWidth, int reqHeight) {
+
+        // First decode with inJustDecodeBounds=true to check dimensions
+        final BitmapFactory.Options options = new BitmapFactory.Options();
+        options.inJustDecodeBounds = true;
+        BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length, options);
+
+        // Calculate inSampleSize
+        options.inSampleSize = calculateInSampleSize(options, reqWidth, reqHeight);
+
+        // Decode bitmap with inSampleSize set
+        options.inJustDecodeBounds = false;
+        return BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length, options);
+    }
+
 
     /**
      * DETERIORATE QUALITY Bitmap
@@ -97,6 +121,24 @@ public class BitmapUtils {
         options.inPreferredConfig = Bitmap.Config.RGB_565; // 2 bytes per pixel, not 4
         options.inDither = true;
         return BitmapFactory.decodeResource(res, resId, options);
+    }
+
+    public static Bitmap decodePixelDeteriorationBitmapFromByteArray(byte[] byteArray,
+                                                                     int reqWidth, int reqHeight) {
+
+        // First decode with inJustDecodeBounds=true to check dimensions
+        final BitmapFactory.Options options = new BitmapFactory.Options();
+        options.inJustDecodeBounds = true;
+        BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length, options);
+
+        // Calculate inSampleSize
+        options.inSampleSize = calculateInSampleSize(options, reqWidth, reqHeight);
+
+        // Decode bitmap with inSampleSize set
+        options.inJustDecodeBounds = false;
+        options.inPreferredConfig = Bitmap.Config.RGB_565; // 2 bytes per pixel, not 4
+        options.inDither = true;
+        return BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length, options);
     }
 
 
@@ -124,6 +166,42 @@ public class BitmapUtils {
 
         /* EFFICIENT Crop ? - Creates new Bitmap */ // <- Best option?
         bitmap = BitmapFactory.decodeResource(res, resId, options);
+        croppedBitmap = Bitmap.createBitmap(bitmap,
+                x, y,
+                width, height);
+        bitmap.recycle();
+
+        /* EFFICIENT Crop ? - Reuses bitmap, but it is slow */
+//        croppedBitmap = BitmapFactory.decodeResource(res, resId, options);
+//        int[] pixels = getPixelsFromBitmap(croppedBitmap,
+//                x, y,
+//                width, height);
+//        croppedBitmap.setPixels(pixels, 0, width,
+//                0, 0,
+//                width, height);
+
+        return croppedBitmap;
+    }
+
+    public static Bitmap decodeCropBitmapFromByteArray(byte[] byteArray,
+                                                       int x, int y,
+                                                       int width, int height) {
+
+        Bitmap bitmap;
+        Bitmap croppedBitmap;
+        final BitmapFactory.Options options = new BitmapFactory.Options();
+
+        // First decode with inJustDecodeBounds=true to check dimensions
+        options.inJustDecodeBounds = true;
+        BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length, options);
+
+        // Decode bitmap with inSampleSize set
+        options.inJustDecodeBounds = false;
+        // Enables bitmap re-usage
+        options.inMutable = true;
+
+        /* EFFICIENT Crop ? - Creates new Bitmap */ // <- Best option?
+        bitmap = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length, options);
         croppedBitmap = Bitmap.createBitmap(bitmap,
                 x, y,
                 width, height);
