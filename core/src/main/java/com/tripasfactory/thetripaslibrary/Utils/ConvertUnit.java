@@ -6,6 +6,10 @@ import android.content.res.Resources;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
 
+import org.joda.time.DateTime;
+import org.joda.time.format.DateTimeFormat;
+import org.joda.time.format.DateTimeFormatter;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -84,6 +88,24 @@ public class ConvertUnit {
 
         return result;
 
+    }
+
+    /**
+     *  Formatted date with time conversion: String -> DateTime
+     * */
+    public static DateTime convertStringToDateTime(String dateTimeAsString) {
+        DateTimeFormatter dtfr = DateTimeFormat.fullDateTime();
+        DateTime dateTime = dtfr.parseDateTime(dateTimeAsString);
+        return dateTime;
+    }
+
+    /**
+     *  Formatted date with time conversion: DateTime -> String
+     * */
+    public static String convertDateTimeToString(DateTime dateTime) {
+        DateTimeFormatter dtfr = DateTimeFormat.fullDateTime();
+        String dateTimeStr = dateTime.toString(dtfr);;
+        return dateTimeStr;
     }
 
 }
